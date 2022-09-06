@@ -1,5 +1,4 @@
-Initially load dataset into S3 bucket and use this to copy the data into Apache Hive table. 
-After creating proper external and internal tables, following steps of analysis has been done. 
+# Apache Hive - AWS
 
 # Input Data 
 
@@ -53,3 +52,8 @@ After performing above steps external table amz_review_col gets created for anal
        Select rate_year , count(1) cnt from (
        Select year(from_unixtime(unixreviewtime)) rate_year from amz_review_col )T group by rate_year order by rate_year desc;
  
+ # Data Analysis with Partition 
+ 
+   To have paritions certain flags need to be enabled in Apache Hive. Following are the flags 
+   
+        
