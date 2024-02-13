@@ -56,6 +56,8 @@ Best practices are mostly focused on cost reduction or performance improvement
 🔹 Jupiter Network is inside Big Query data centers and provides 1TB/s speed and communicate without any delays \
 🔹 Distribution of workers and dividing the query into smaller chunks help in fast fetching/executing of the data 
 
+![img](https://github.com/sarathchandrikak/Data-Engineering/blob/main/Data%20Warehouses/imgs/google_cloud_internal_architecture.png)
+
 
 ## ♦️ Big Query ML
 
