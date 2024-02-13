@@ -63,4 +63,4 @@ Best practices are mostly focused on cost reduction or performance improvement
 🔹 Steps involved in ML model development \
  ![img](https://github.com/sarathchandrikak/Data-Engineering/blob/main/Data%20Warehouses/imgs/ml_flow.png)
 🔹 Big Query does automatic feature engineering and hyper parameter tuning \
-🔹 It also allows us to deploy models using docker images \ 
+🔹 It also allows us to deploy models using docker images 
