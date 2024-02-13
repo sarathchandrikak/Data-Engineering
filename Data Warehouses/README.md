@@ -1,9 +1,31 @@
 # Data Warehoues
 
+Data Warehouse is a OLAP solution used for reporting and data analysis. It has raw data, meta data, summary data, data marts.
 
 # BIG QUERY
 
+A serverless Data Warehouse system. Bigquery maximizes flexibility by separating the compute engine from storage. 
 
+
+## Partitioning
+
+🔹 Mostly done on time unit column. Can be done on hourly, yearly, monthly basis \
+🔹 Maximum number of partitions supported is 4000 \
+🔹 Partitioning results in small amount of data per partition \
+🔹 Partitioning might also results in a large number of partitions beyond the limits on partitioned tables \
+🔹 For partitioned table clustering is maintained for data within the scope of partition
+
+## Clustering
+
+🔹 Clustering is performed to colocate the data with columns specified \
+🔹 Order of the column is important \
+🔹 Clustering improves filter and aggregate queries \
+🔹 In clustering we can specify upto 4 columns \
+🔹 Table with size < 1 GB may not show great difference with clustering and partitioning
+
+## Partitioning vs Clustering 
+
+![img](https://github.com/sarathchandrikak/Data-Engineering/blob/main/Data%20Warehouses/imgs/partitioning%20vs%20clustering.png)
 
 ## Big Query Best Practice 
 
@@ -25,7 +47,6 @@ Best practices are mostly focused on cost reduction or performance improvement
 🔹 Avoid using javascript in user defined functions \
 🔹 Use approximate aggregation functions (HyperLogLog++) \
 🔹 Place the table with largest rows as the first one while joining 
-
 
 ## Big Query Internals 
 
