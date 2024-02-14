@@ -2,12 +2,12 @@
 
 Data Warehouse is a OLAP solution used for reporting and data analysis. It has raw data, meta data, summary data, data marts.
 
-# ♦️ BIG QUERY
+## ♦️ BIG QUERY
 
 A serverless Data Warehouse system. Bigquery maximizes flexibility by separating the compute engine from storage. 
 
 
-## ♦️ Partitioning
+#### ♦ Partitioning
 
 🔹 Mostly done on time unit column. Can be done on hourly, yearly, monthly basis \
 🔹 Maximum number of partitions supported is 4000 \
@@ -15,7 +15,7 @@ A serverless Data Warehouse system. Bigquery maximizes flexibility by separating
 🔹 Partitioning might also results in a large number of partitions beyond the limits on partitioned tables \
 🔹 For partitioned table clustering is maintained for data within the scope of partition
 
-## ♦️ Clustering
+#### ♦ Clustering
 
 🔹 Clustering is performed to colocate the data with columns specified \
 🔹 Order of the column is important \
@@ -27,23 +27,23 @@ A serverless Data Warehouse system. Bigquery maximizes flexibility by separating
 
 ![img](https://github.com/sarathchandrikak/Data-Engineering/blob/main/Data%20Warehouses/imgs/partitioning%20vs%20clustering.png)
 
-## ♦️ Big Query Best Practice 
+## ♦️ Big Query Best Practices 
 
 Best practices are mostly focused on cost reduction or performance improvement
 
-#### ♦️ Steps to consider for cost reduction
+#### ♦ Steps to consider for cost reduction
 🔹 Avoid Select * and instead specify column name, this is because of the columnar architecture of Big Query \
 🔹 Clustering and Partitioning help in reducing cost \
 🔹 Materialize query into different stages 
 
-#### ♦️ Steps to consider for performance imporvement 
+#### ♦ Steps to consider for performance imporvement 
 🔹 Filter on partitioned/cluster column \
 🔹 Denormalize the data \
 🔹 Reduce data before using a join \
 🔹 Do not treat WITH clauses as prepared statements \
 🔹 Avoid Overshading tables 
 
-#### ♦️ General Considerations
+#### ♦ General Considerations
 🔹 Avoid using javascript in user defined functions \
 🔹 Use approximate aggregation functions (HyperLogLog++) \
 🔹 Place the table with largest rows as the first one while joining 
@@ -58,11 +58,14 @@ Best practices are mostly focused on cost reduction or performance improvement
 
 ![img](https://github.com/sarathchandrikak/Data-Engineering/blob/main/Data%20Warehouses/imgs/google_cloud_internal_architecture.png)
 
-
 ## ♦️ Big Query ML
 
+Please refer for steps/SQL statements used to build and predict linear regression model [here](https://github.com/sarathchandrikak/Data-Engineering/blob/main/Data%20Warehouses/BigQuery_ML.md)
+
+
 🔹 Pricing is the important factor to decide on ML in Big Query \
-🔹 Steps involved in ML model development \
- ![img](https://github.com/sarathchandrikak/Data-Engineering/blob/main/Data%20Warehouses/imgs/ml_flow.png)
 🔹 Big Query does automatic feature engineering and hyper parameter tuning \
-🔹 It also allows us to deploy models using docker images 
+🔹 It also allows us to deploy models using docker images \
+🔹 Steps involved in ML model development 
+ ![img](https://github.com/sarathchandrikak/Data-Engineering/blob/main/Data%20Warehouses/imgs/ml_flow.png)
+
