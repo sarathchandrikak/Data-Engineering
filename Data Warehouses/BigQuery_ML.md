@@ -1,11 +1,14 @@
+# BigQuery Model Building
 
 #### Create table using taxi data
 
+```sql
 CREATE OR REPLACE EXTERNAL TABLE `stone-passage-413413.yellow_taxi.data` 
 OPTIONS (
 format = 'parquet',
 uris = ['gs://data-warehouse-ip/yellow/downloads/*']
 );
+```
 
 
 #### Create partitioned table 
