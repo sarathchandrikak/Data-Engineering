@@ -1,6 +1,12 @@
 # BigQuery Model Building
 
-#### Create table using taxi data
+
+Data has been imported into GCS using [script](https://github.com/sarathchandrikak/Data-Engineering/blob/main/Data%20Warehouses/extract_yellow_trip.py) for the yellow taxi trip data for years 2019, 2020. 
+
+Original dataset location: https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
+
+
+#### 📣 Create table using taxi data
 
 ```sql
 CREATE OR REPLACE EXTERNAL TABLE `stone-passage-413413.yellow_taxi.data` 
@@ -11,23 +17,35 @@ uris = ['gs://data-warehouse-ip/yellow/downloads/*']
 ```
 
 
-#### Create partitioned table 
+#### 📣 Create partitioned table 
 
 ```sql
 CREATE OR REPLACE TABLE `stone-passage-413413.yellow_taxi.data_partitioned` 
-PARTITION BY DATE(tpep_pickup_datetime) AS 
-SELECT * FROM stone-passage-413413.yellow_taxi.data;
+PARTITION BY DATE(tpep_pickup_datetime)
+AS 
+SELECT
+*
+FROM
+stone-passage-413413.yellow_taxi.data;
 ```
 
 
-#### Select requrired columns from partitioned table
+#### 📣 Select requrired columns from partitioned table
 ```sql
-SELECT passenger_count, trip_distance, PULocationID, DOLocationID, payment_type, fare_amount, tolls_amount, tip_amount
+SELECT
+    passenger_count,
+    trip_distance,
+    PULocationID,
+    DOLocationID,
+    payment_type,
+    fare_amount,
+    tolls_amount,
+    tip_amount
 FROM `stone-passage-413413.yellow_taxi.data_partitioned` WHERE fare_amount != 0;
 ```
 
 
-#### Create ML table
+#### 📣 Create ML table
 
 ```sql
 -- CREATE A ML TABLE WITH APPROPRIATE TYPE
@@ -48,7 +66,7 @@ FROM `stone-passage-413413.yellow_taxi.data_partitioned` WHERE fare_amount != 0
 ```
 
 
-### Create ML model with Default setting
+### 📣 Create ML model with Default setting
 
 ```sql
 
@@ -66,14 +84,13 @@ WHERE
 tip_amount IS NOT NULL;
 ```
 
-#### Check feature info
+#### 📣 Check feature info
 ```sql
 -- CHECK FEATURES
 SELECT * FROM ML.FEATURE_INFO(MODEL `stone-passage-413413.yellow_taxi.tip_model`);
 ```
 
-
-#### Evaluate the model
+#### 📣 Evaluate the model
 ```sql
 -- EVALUATE THE MODEL
 SELECT
@@ -90,7 +107,9 @@ tip_amount IS NOT NULL
 ));
 ```
 
-#### Predict the model
+![img](https://github.com/sarathchandrikak/Data-Engineering/blob/main/Data%20Warehouses/imgs/model_evaluate.png)
+
+#### 📣 Predict the model
 
 ```sql
 -- PREDICT THE MODEL
@@ -108,7 +127,9 @@ tip_amount IS NOT NULL
 ));
 ```
 
-#### Predict and Explain the model
+![img](https://github.com/sarathchandrikak/Data-Engineering/blob/main/Data%20Warehouses/imgs/tip_amount%20by%20predicted_tip_amount.png)
+
+#### 📣 Predict and Explain the model
 ```sql
 
 -- PREDICT AND EXPLAIN
@@ -126,7 +147,7 @@ tip_amount IS NOT NULL
 ), STRUCT(3 as top_k_features));
 ```
 
-#### Additionally define hyper parameters and run the model
+#### 📣 Additionally define hyper parameters and run the model
 ```sql
 -- HYPER PARAM TUNNING
 CREATE OR REPLACE MODEL `stone-passage-413413.yellow_taxi.tip_hyperparam_model`
