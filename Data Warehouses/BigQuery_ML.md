@@ -127,7 +127,7 @@ tip_amount IS NOT NULL
 ));
 ```
 
-![img](https://github.com/sarathchandrikak/Data-Engineering/blob/main/Data%20Warehouses/imgs/tip_amount%20by%20predicted_tip_amount.png)
+![img](https://github.com/sarathchandrikak/Data-Engineering/blob/main/Data%20Warehouses/imgs/actualvspredicted.png)
 
 #### 📣 Predict and Explain the model
 ```sql
