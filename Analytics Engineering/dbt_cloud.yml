@@ -1,0 +1,14 @@
+version: "1"
+context:
+  active-host: "cloud.getdbt.com"
+  active-project: "352026"
+projects:
+  - project-name: "Analytics"
+    project-id: "352026"
+    account-name: "DH"
+    account-id: "247055"
+    account-host: "cloud.getdbt.com"
+    api-key: "612c65b71e2fddb751bc04b9d585dc46db5a8d48"
+    access_url: "git@github.com:dbt-cloud-managed-repositories/dbt-cloud-247055-ae-dbt-project.git"
+
+

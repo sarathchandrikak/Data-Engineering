@@ -1,0 +1,98 @@
+[0m21:49:34.112869 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1077e2940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109938b80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1099498e0>]}
+
+
+============================== 21:49:34.117881 | 2030a800-e170-4ca1-860b-cf73f6b26fdb ==============================
+[0m21:49:34.117881 [info ] [MainThread]: Running with dbt=1.7.8
+[0m21:49:34.118402 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/Users/sarathchandrika/.dbt', 'log_path': 'logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt init ae_project', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m21:49:34.118916 [error] [MainThread]: Encountered an error:
+[ConfigFolderDirectory]: Unable to parse dict {'dir': PosixPath('/Users/sarathchandrika/.dbt')}
+[0m21:49:34.133207 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/sarathchandrika/Documents/data-engineering-zoomcamp/de_venv/lib/python3.9/site-packages/google/protobuf/json_format.py", line 623, in _ConvertFieldValuePair
+    _ConvertScalarFieldValue(value, field,
+  File "/Users/sarathchandrika/Documents/data-engineering-zoomcamp/de_venv/lib/python3.9/site-packages/google/protobuf/json_format.py", line 787, in _ConvertScalarFieldValue
+    if _UNPAIRED_SURROGATE_PATTERN.search(value):
+TypeError: expected string or bytes-like object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sarathchandrika/Documents/data-engineering-zoomcamp/de_venv/lib/python3.9/site-packages/dbt/events/base_types.py", line 72, in __init__
+    self.pb_msg = ParseDict(kwargs, msg_cls())
+  File "/Users/sarathchandrika/Documents/data-engineering-zoomcamp/de_venv/lib/python3.9/site-packages/google/protobuf/json_format.py", line 461, in ParseDict
+    parser.ConvertMessage(js_dict, message, '')
+  File "/Users/sarathchandrika/Documents/data-engineering-zoomcamp/de_venv/lib/python3.9/site-packages/google/protobuf/json_format.py", line 502, in ConvertMessage
+    self._ConvertFieldValuePair(value, message, path)
+  File "/Users/sarathchandrika/Documents/data-engineering-zoomcamp/de_venv/lib/python3.9/site-packages/google/protobuf/json_format.py", line 633, in _ConvertFieldValuePair
+    raise ParseError('Failed to parse {0} field: {1}.'.format(name, e))
+google.protobuf.json_format.ParseError: Failed to parse dir field: expected string or bytes-like object.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sarathchandrika/Documents/data-engineering-zoomcamp/de_venv/lib/python3.9/site-packages/dbt/cli/requires.py", line 91, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/Users/sarathchandrika/Documents/data-engineering-zoomcamp/de_venv/lib/python3.9/site-packages/dbt/cli/requires.py", line 76, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/sarathchandrika/Documents/data-engineering-zoomcamp/de_venv/lib/python3.9/site-packages/dbt/cli/main.py", line 515, in init
+    results = task.run()
+  File "/Users/sarathchandrika/Documents/data-engineering-zoomcamp/de_venv/lib/python3.9/site-packages/dbt/task/init.py", line 298, in run
+    self.create_profiles_dir(profiles_dir)
+  File "/Users/sarathchandrika/Documents/data-engineering-zoomcamp/de_venv/lib/python3.9/site-packages/dbt/task/init.py", line 70, in create_profiles_dir
+    fire_event(ConfigFolderDirectory(dir=profiles_dir))
+  File "/Users/sarathchandrika/Documents/data-engineering-zoomcamp/de_venv/lib/python3.9/site-packages/dbt/events/base_types.py", line 81, in __init__
+    raise Exception(error_msg)
+Exception: [ConfigFolderDirectory]: Unable to parse dict {'dir': PosixPath('/Users/sarathchandrika/.dbt')}
+
+[0m21:49:34.135677 [debug] [MainThread]: Resource report: {"command_name": "init", "command_wall_clock_time": 0.05099725, "process_user_time": 2.025252, "process_kernel_time": 0.256319, "process_mem_max_rss": "107397120", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m21:49:34.136112 [debug] [MainThread]: Command `dbt init` failed at 21:49:34.135996 after 0.05 seconds
+[0m21:49:34.136426 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1077e2940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109975130>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109975fd0>]}
+[0m21:49:34.136755 [debug] [MainThread]: Flushing usage events
+[0m21:59:07.609884 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104d39c70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107955bb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107965910>]}
+
+
+============================== 21:59:07.614846 | 6bdbb249-f76b-4547-8d26-3d09b5db0677 ==============================
+[0m21:59:07.614846 [info ] [MainThread]: Running with dbt=1.7.8
+[0m21:59:07.615345 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/sarathchandrika/.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': 'logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt init myproject', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m21:59:07.615829 [error] [MainThread]: Encountered an error:
+[ConfigFolderDirectory]: Unable to parse dict {'dir': PosixPath('/Users/sarathchandrika/.dbt')}
+[0m21:59:07.630196 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/sarathchandrika/Documents/data-engineering-zoomcamp/de_venv/lib/python3.9/site-packages/google/protobuf/json_format.py", line 623, in _ConvertFieldValuePair
+    _ConvertScalarFieldValue(value, field,
+  File "/Users/sarathchandrika/Documents/data-engineering-zoomcamp/de_venv/lib/python3.9/site-packages/google/protobuf/json_format.py", line 787, in _ConvertScalarFieldValue
+    if _UNPAIRED_SURROGATE_PATTERN.search(value):
+TypeError: expected string or bytes-like object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sarathchandrika/Documents/data-engineering-zoomcamp/de_venv/lib/python3.9/site-packages/dbt/events/base_types.py", line 72, in __init__
+    self.pb_msg = ParseDict(kwargs, msg_cls())
+  File "/Users/sarathchandrika/Documents/data-engineering-zoomcamp/de_venv/lib/python3.9/site-packages/google/protobuf/json_format.py", line 461, in ParseDict
+    parser.ConvertMessage(js_dict, message, '')
+  File "/Users/sarathchandrika/Documents/data-engineering-zoomcamp/de_venv/lib/python3.9/site-packages/google/protobuf/json_format.py", line 502, in ConvertMessage
+    self._ConvertFieldValuePair(value, message, path)
+  File "/Users/sarathchandrika/Documents/data-engineering-zoomcamp/de_venv/lib/python3.9/site-packages/google/protobuf/json_format.py", line 633, in _ConvertFieldValuePair
+    raise ParseError('Failed to parse {0} field: {1}.'.format(name, e))
+google.protobuf.json_format.ParseError: Failed to parse dir field: expected string or bytes-like object.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sarathchandrika/Documents/data-engineering-zoomcamp/de_venv/lib/python3.9/site-packages/dbt/cli/requires.py", line 91, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/Users/sarathchandrika/Documents/data-engineering-zoomcamp/de_venv/lib/python3.9/site-packages/dbt/cli/requires.py", line 76, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/sarathchandrika/Documents/data-engineering-zoomcamp/de_venv/lib/python3.9/site-packages/dbt/cli/main.py", line 515, in init
+    results = task.run()
+  File "/Users/sarathchandrika/Documents/data-engineering-zoomcamp/de_venv/lib/python3.9/site-packages/dbt/task/init.py", line 298, in run
+    self.create_profiles_dir(profiles_dir)
+  File "/Users/sarathchandrika/Documents/data-engineering-zoomcamp/de_venv/lib/python3.9/site-packages/dbt/task/init.py", line 70, in create_profiles_dir
+    fire_event(ConfigFolderDirectory(dir=profiles_dir))
+  File "/Users/sarathchandrika/Documents/data-engineering-zoomcamp/de_venv/lib/python3.9/site-packages/dbt/events/base_types.py", line 81, in __init__
+    raise Exception(error_msg)
+Exception: [ConfigFolderDirectory]: Unable to parse dict {'dir': PosixPath('/Users/sarathchandrika/.dbt')}
+
+[0m21:59:07.632663 [debug] [MainThread]: Resource report: {"command_name": "init", "command_wall_clock_time": 0.040983293, "process_user_time": 1.913417, "process_kernel_time": 0.210881, "process_mem_max_rss": "105119744", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m21:59:07.633114 [debug] [MainThread]: Command `dbt init` failed at 21:59:07.632996 after 0.04 seconds
+[0m21:59:07.633430 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104d39c70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107991fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107991130>]}
+[0m21:59:07.633753 [debug] [MainThread]: Flushing usage events
