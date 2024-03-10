@@ -38,7 +38,7 @@ Ad-hoc analytical queries that involve frequent full table scans
 <img width="1189" alt="Screenshot 2024-03-10 at 4 31 07 PM" src="https://github.com/sarathchandrikak/Data-Engineering/assets/65502906/ef4be3b4-25bf-4fa7-88e4-d083b42536bd">
 
 
-### Rising Wave 
+### Rising Wave Functions/ Operations
 <img width="630" alt="Screenshot 2024-03-10 at 4 33 24 PM" src="https://github.com/sarathchandrikak/Data-Engineering/assets/65502906/598fb019-7543-4acd-a4fe-5de7050f329c">
 
 
