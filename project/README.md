@@ -18,7 +18,7 @@ SELECT * FROM `bigquery-public-data.catalonian_mobile_coverage.mobile_data_2015_
 
 # 🔺 Architecture
 
-![img](https://github.com/sarathchandrikak/Data-Engineering/blob/main/project/ip_pic.drawio.png)
+![img](https://github.com/sarathchandrikak/Data-Engineering/blob/main/project/de_img.png)
 
 
 # 🔺 Implementation Steps
