@@ -101,11 +101,6 @@ FROM bigquery-public-data.catalonian_mobile_coverage.mobile_data_2015_2017;
       --properties=spark.sql.legacy.timeParserPolicy=LEGACY       
       gs://de_mobile_data/data_analysis_sql.py 
 
-# 🔺 Dashboard
-
-![img](https://github.com/sarathchandrikak/Data-Engineering/blob/main/project/dashboard.png)
-
-
 # 🔺 Results
 
 1. Orange network is the leading network among all the networks
@@ -113,3 +108,10 @@ FROM bigquery-public-data.catalonian_mobile_coverage.mobile_data_2015_2017;
 3. Most of the consumption based on user acitivity is IN Vehicle
 4. Count of Emergency related services have multiplied thrice from 2015 - 2017
 5. Precision - that describes the provider accuracy is more for 4G network comapared to 2G, 3G
+
+# 🔺 Dashboard
+
+![img](https://github.com/sarathchandrikak/Data-Engineering/blob/main/project/dashboard.png)
+
+
+
