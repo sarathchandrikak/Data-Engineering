@@ -8,11 +8,12 @@ Examine the crowd-sourced data collection regarding mobile telephone network cov
 
 Dataset is from Big Query public datasets availabe [here](https://console.cloud.google.com/marketplace/product/gencat/cell_coverage?project=data-engineering-final-418904)
 
+![img](https://github.com/sarathchandrikak/Data-Engineering/blob/main/project/data-info.png)
+
 Dataset can also be accessed from big query using this command 
 
 ```sql
 SELECT * FROM `bigquery-public-data.catalonian_mobile_coverage.mobile_data_2015_2017` LIMIT 1000
 ```
 
-![img](https://github.com/sarathchandrikak/Data-Engineering/blob/main/project/data-info.png)
 
