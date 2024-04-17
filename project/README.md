@@ -107,3 +107,9 @@ FROM bigquery-public-data.catalonian_mobile_coverage.mobile_data_2015_2017;
 
 
 # 🔺 Results
+
+1. Orange network is the leading network among all the networks
+2. There has been a significant rise in 4G connections, in the year 2016 and decrease in 2G, 3G connections
+3. Most of the consumption based on user acitivity is IN Vehicle
+4. Count of Emergency related services have multiplied thrice from 2015 - 2017
+5. Precision - that describes the provider accuracy is more for 4G network comapared to 2G, 3G
